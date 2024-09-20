@@ -1,0 +1,19 @@
+.category{
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+}
+.category__container {
+    position: relative;
+    margin-top: -10%;
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+} 
+.category img {
+  max-height: 230px;
+  width: 100%;
+  object-fit: contain;
+
+}
