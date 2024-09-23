@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './Header.module.css'
+import {Link} from 'react-router-dom'
 import { SlLocationPin } from "react-icons/sl";
 import { BiCartDownload } from "react-icons/bi";
 import { IoSearch } from "react-icons/io5";
@@ -14,9 +15,9 @@ const Header = () => {
          <section>
         <div   className={classes.header__container}>
         <div className={classes.logo__container}>    
-           <a href='/'>
+           <Link to='/'>
                 <img src='https://pngimg.com/uploads/amazon/small/amazon_PNG11.png' alt='amazon logo'/>
-            </a>
+            </Link>
            <div className={classes.delivery}>
             <span>
             <SlLocationPin />
@@ -35,24 +36,24 @@ const Header = () => {
                 <IoSearch  size={25}/>
             </div>
          <div className={classes.order__container}>
-         <a href=''className={classes.language}>
+         <Link to=''className={classes.language}>
               <img src='https://flagpedia.net/data/flags/w1600/us.png' alt='' />
             <section name="" id="">
                 <option value="">EN</option>
             </section>
-         </a>
-        <a href=''>
+         </Link>
+        <Link to='/auth'>
            <p>Sign In</p>
            <span>Account & Lists</span>
-        </a>
-        <a href=''>
+        </Link>
+        <Link to='/orders'>
             <p>returns</p>
             <span>& Orders</span>
-        </a>
-        <a href='' className={classes.cart}>
+        </Link>
+        <Link to='/cart' className={classes.cart}>
         <BiCartDownload size={35} />
             <span>0</span>
-          </a>
+          </Link>
          </div>
       </div>
    </section>
