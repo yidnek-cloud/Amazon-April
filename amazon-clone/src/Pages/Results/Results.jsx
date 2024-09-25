@@ -27,8 +27,8 @@ function Results() {
           {results?.map((product)=>(
             <productCard
             key={product.id}
-
             product={product}
+            renderAdd={true}
             />
           ))}
         </div>

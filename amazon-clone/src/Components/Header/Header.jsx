@@ -2,16 +2,24 @@ import React from 'react'
 import classes from './Header.module.css'
 import {Link} from 'react-router-dom'
 import { SlLocationPin } from "react-icons/sl";
-import { BiCartDownload } from "react-icons/bi";
 import { IoSearch } from "react-icons/io5";
 import LowerHeader from './LowerHeader';
+import { useContext } from 'react';
+import { BiCartDownload } from "react-icons/bi";
+import { DataContext } from '../DataProvider/DataProvider';
 
 
 
 const Header = () => {
+  const [{basket},dispatch] = useContext(DataContext)
+  // console.log(basket.length);
+  const totalItem = basket?.reduce((amount,item)=>{
+    return item.amount + amount
+  },0)
+  
   return (
    
-    <>
+    <section className={classes.fixed}>
          <section>
         <div   className={classes.header__container}>
         <div className={classes.logo__container}>    
@@ -52,13 +60,13 @@ const Header = () => {
         </Link>
         <Link to='/cart' className={classes.cart}>
         <BiCartDownload size={35} />
-            <span>0</span>
+            <span>{totalItem}</span>
           </Link>
          </div>
       </div>
-   </section>
- <LowerHeader />
-</>
+         </section>
+     <LowerHeader />
+    </section>
   )
 }
 
